@@ -1,4 +1,4 @@
-# auto_qc
+# autoQC
 
 R package for automatic quality control of physical, chemical and marine biological data developed by Sh at SMHI, modified from https://iobis.github.io/obistools
 
