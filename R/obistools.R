@@ -1,6 +1,6 @@
-#' obistools: Data Enhancement and Quality Control of Marine Species Observations
+#' auto_qc: Automatic quality control of physical, chemical and marine biological data
 #'
-#' Prepare data sets for submission to the Ocean Biogeographical Information System (<http://iobis.org>). It can also be used for checking the quality of a set of marine species distribution records.
+#' Control data sets submitted to the Swedish Oceanographic data center SHARK (<https://sharkweb.smhi.se/>). It can also be used for checking the quality of a set of marine species distribution records.
 #'
 #' @docType package
 #' @name obistools
@@ -23,4 +23,7 @@
 #' @import digest
 #' @importFrom stats complete.cases
 #' @importFrom stats na.omit
+#' modified from https://iobis.github.io/obistools
+#' Provoost P and Bosch S (2018). “obistools: Tools for data enhancement and quality control.” Ocean Biogeographic Information System. Intergovernmental Oceanographic Commission of UNESCO. https://cran.r-project.org/package=obistools.
+
 NULL
