@@ -7,11 +7,14 @@
 #' @param level The level of error reporting, i.e. "error" or "warning". Recommended fields are only checked in case of "warning".
 #' @return Any warnings or errors.
 #' @export
+#' modified from https://iobis.github.io/obistools
+#' Provoost P and Bosch S (2018). “obistools: Tools for data enhancement and quality control.” Ocean Biogeographic Information System. Intergovernmental Oceanographic Commission of UNESCO. https://cran.r-project.org/package=obistools.
+
 check_fields <- function(data, level = "error") {
 
     errors <- data_frame()
-    required <- c("eventDate", "decimalLongitude", "decimalLatitude", "scientificName", "scientificNameID", "occurrenceStatus", "basisOfRecord")
-    recommended <- c("minimumDepthInMeters", "maximumDepthInMeters")
+    required <- c("visit_year", "station_name", "sample_project_name_sv", "sample_orderer_name_sv", "platform_code", "sample_date", "sample_latitude_dd", "sample_longitude_dd", "positioning_system_code", "water_depth_m")
+    recommended <- c("monitoring_station_type_code", "monitoring_purpose_code", "monitoring_program_code", "reporting_institute_name_sv", "analytical_laboratory_name_sv")
 
     # find missing required fields
 
