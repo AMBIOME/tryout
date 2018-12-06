@@ -11,4 +11,4 @@ install.packages("devtools")
 
 library(devtools)
 
-install_github("sharksmhi/SHARKqcR")
+install_github("sharksmhi/autoQC")
