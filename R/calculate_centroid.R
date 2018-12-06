@@ -31,8 +31,8 @@ calculate_centroid <- function(wkt) {
       stop("calculate_centroid: hull should be a point, line or polygon")
     }
     return(data.frame(
-      decimalLongitude = centroid[1],
-      decimalLatitude = centroid[2],
+      sample_longitude_dd = centroid[1],
+      sample_latitude_dd = centroid[2],
       coordinateUncertaintyInMeters = max(geosphere::distm(centroid, hxy))
     ))
   })
