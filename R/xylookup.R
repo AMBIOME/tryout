@@ -3,7 +3,7 @@
 #' @usage lookup_xy(data, shoredistance=TRUE, grids=TRUE, areas=FALSE,
 #'   asdataframe=TRUE)
 #'
-#' @param data The data frame with columns decimalLongitude and decimalLatitude.
+#' @param data The data frame with columns sample_longitude_dd and sample_latitude_dd
 #' @param shoredistance Indicate whether the shoredistance should be returned
 #'   (default \code{TRUE}).
 #' @param grids Indicate whether the grid values such as temperature and
