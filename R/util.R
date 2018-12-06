@@ -27,15 +27,15 @@ occurrence_fields <- function() {
 
 check_lonlat <- function(data, report) {
   errors <- c()
-  if (!"decimalLongitude" %in% names(data)) {
-    errors <- c(errors, "Column decimalLongitude missing")
-  } else if (!is.numeric(data$decimalLongitude)) {
-    errors <- c(errors, "Column decimalLongitude is not numeric")
+  if (!"sample_longitude_dd" %in% names(data)) {
+    errors <- c(errors, "Column sample_longitude_dd missing")
+  } else if (!is.numeric(data$sample_longitude_dd)) {
+    errors <- c(errors, "Column sample_longitude_dd is not numeric")
   }
-  if (!"decimalLatitude" %in% names(data)) {
-    errors <- c(errors, "Column decimalLatitude missing")
-  } else if (!is.numeric(data$decimalLatitude)) {
-    errors <- c(errors, "Column decimalLatitude is not numeric")
+  if (!"sample_latitude_dd" %in% names(data)) {
+    errors <- c(errors, "Column sample_latitude_dd missing")
+  } else if (!is.numeric(data$sample_latitude_dd)) {
+    errors <- c(errors, "Column sample_latitude_dd is not numeric")
   }
   if(length(errors) > 0) {
     if(report) {
@@ -50,17 +50,17 @@ check_lonlat <- function(data, report) {
 
 get_xy_clean <- function(data, returnisclean=FALSE) {
   check_lonlat(data, report = FALSE)
-  sp <- data.frame(decimalLongitude = numeric(0), decimalLatitude = numeric(0))
+  sp <- data.frame(sample_longitude_dd = numeric(0), sample_latitude_dd = numeric(0))
   isclean <- NULL
   if(NROW(data) > 0) {
-    sp <- data %>% select(decimalLongitude, decimalLatitude)
+    sp <- data %>% select(sample_longitude_dd, sample_latitude_dd)
     # Only valid coordinates
     isclean <- stats::complete.cases(sp) &
-      sapply(sp$decimalLongitude, is.numeric) &
-      sapply(sp$decimalLatitude, is.numeric) &
-      !is.na(sp$decimalLongitude) & !is.na(sp$decimalLatitude) &
-      sp$decimalLongitude >= -180.0 & sp$decimalLongitude <= 180.0 &
-      sp$decimalLatitude >= -90.0 & sp$decimalLatitude <= 90.0
+      sapply(sp$sample_longitude_dd, is.numeric) &
+      sapply(sp$sample_latitude_dd, is.numeric) &
+      !is.na(sp$sample_longitude_dd) & !is.na(sp$sample_latitude_dd) &
+      sp$sample_longitude_dd >= -180.0 & sp$sample_longitude_dd <= 180.0 &
+      sp$sample_latitude_dd >= -90.0 & sp$sample_latitude_dd <= 90.0
   }
   cleansp <- sp[isclean,,drop=FALSE]
   if(returnisclean) {
@@ -74,13 +74,13 @@ get_xy_clean_duplicates <- function(data) {
   clean <- get_xy_clean(data, returnisclean = TRUE)
   if(NROW(clean$cleansp) > 0) {
     # Only lookup values for unique coordinates
-    key <- paste(clean$cleansp$decimalLongitude, clean$cleansp$decimalLatitude, sep='\r')
+    key <- paste(clean$cleansp$sample_longitude_dd, clean$cleansp$sample_latitude_dd, sep='\r')
     notdup <- !duplicated(key)
     uniquesp <- clean$cleansp[notdup,]
     duplicated_lookup <- match(key, key[notdup])
     list(uniquesp=uniquesp, isclean=clean$isclean, duplicated_lookup=duplicated_lookup)
   } else {
-    list(uniquesp = data.frame(decimalLongitude = numeric(0), decimalLatitude = numeric(0)),
+    list(uniquesp = data.frame(sample_longitude_dd = numeric(0), sample_latitude_dd = numeric(0)),
          isclean = NULL, duplicated_lookup = NULL)
   }
 }
