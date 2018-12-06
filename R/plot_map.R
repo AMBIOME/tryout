@@ -14,12 +14,12 @@ plot_map <- function(data, zoom = FALSE) {
     world <- borders("world", colour="gray80", fill="gray80")
     m <- ggplot() +
       world +
-      geom_point(data = data, aes(x = decimalLongitude, y = decimalLatitude), size = 2, stroke = 1, alpha = 0.3, colour = "#FF368B") +
+      geom_point(data = data, aes(x = sample_longitude_dd, y = sample_latitude_dd), size = 2, stroke = 1, alpha = 0.3, colour = "#FF368B") +
       xlab("longitude") +
       ylab("latitude")
 
-    xrange <- range(data$decimalLongitude, na.rm = TRUE)
-    yrange <- range(data$decimalLatitude, na.rm = TRUE)
+    xrange <- range(data$sample_longitude_dd, na.rm = TRUE)
+    yrange <- range(data$sample_latitude_dd, na.rm = TRUE)
 
     if (zoom & all(is.finite(xrange)) & all(is.finite(yrange))) {
       margin <- 0.3
@@ -110,6 +110,6 @@ plot_map_leaflet <- function(data, provider = "Esri.OceanBasemap", popup = NULL)
 
   m <- leaflet(data) %>%
     addProviderTiles(provider) %>%
-    addCircleMarkers(~decimalLongitude, ~decimalLatitude, popup = popupdata, radius = 3, weight = 1, fillColor = "#FF368B", color = "#FF368B", opacity = 1, fillOpacity = 0.1)
+    addCircleMarkers(~sample_longitude_dd, ~sample_latitude_dd, popup = popupdata, radius = 3, weight = 1, fillColor = "#FF368B", color = "#FF368B", opacity = 1, fillOpacity = 0.1)
   return(m)
 }
