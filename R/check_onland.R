@@ -43,8 +43,8 @@ check_onland <- function(data, land = NULL, report = FALSE, buffer=0, offline = 
   }
 
   if(offline) {
-    sp <- data %>% select(decimalLongitude, decimalLatitude)
-    coordinates(sp) <- ~ decimalLongitude + decimalLatitude
+    sp <- data %>% select(sample_longitude_dd, sample_latitude_dd)
+    coordinates(sp) <- ~ sample_longitude_dd + sample_latitude_dd
     proj4string(sp) <- CRS("+init=epsg:4326")
     sp <- spTransform(sp, proj4string(land))
     i <- which(!is.na(over(sp, land)))
