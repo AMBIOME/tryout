@@ -3,7 +3,7 @@
 #' @usage check_outliers_species(data, report = FALSE, mad_coef = 6, iqr_coef =
 #'   3)
 #'
-#' @param data The data frame with decimalLongitude, decimalLatitude and
+#' @param data The data frame with sample_longitude_dd, sample_latitude_dd and
 #'   scientificNameID columns.
 #' @param report If TRUE, errors are returned instead of records.
 #' @param mad_coef Coefficient to multiply the median absolute deviation (MAD)
@@ -67,7 +67,7 @@ check_outliers_species <- function(data, report = FALSE, mad_coef = 6, iqr_coef 
 #' @usage check_outliers_dataset(data, report = FALSE, mad_coef = 6, iqr_coef =
 #'
 #'   3)
-#' @param data The data frame with decimalLongitude and decimalLatitude columns.
+#' @param data The data frame with sample_longitude_dd and sample_latitude_dd columns.
 #' @param report If TRUE, errors are returned instead of records.
 #' @param mad_coef Coefficient to multiply the median absolute deviation (MAD)
 #'   by in order to determine the range of valid values. Default is \code{6}.
@@ -163,7 +163,7 @@ qcservice_outliers <- function(data, endpoint, mad_coef, iqr_coef, return_values
     }
 
     ## Add coordinates
-    output[['spatial']][['xy']] <- data[,c('decimalLongitude', 'decimalLatitude')]
+    output[['spatial']][['xy']] <- data[,c('sample_longitude_dd', 'sample_latitude_dd')]
     output[['spatial']][['xy']][!xy$isclean,] <- NA
 
     return(output)
@@ -235,14 +235,14 @@ plot_outliers_spatial <- function(outliers_info, title='', sample_okpoints=1000)
     }
     # add centroid
     centroid <- sf::st_coordinates(sf::st_as_sfc(o$centroid))
-    data <- rbind(data, data_frame(decimalLongitude=centroid[1,1], decimalLatitude=centroid[1,2], color='yellow', radius=5))
+    data <- rbind(data, data_frame(sample_longitude_dd=centroid[1,1], sample_latitude_dd=centroid[1,2], color='yellow', radius=5))
     # legend
     cols <- c('yellow', '#1b9e77', '#d95f02', '#7570b3', '#e7298a')
     legend <- c('Centroid', 'Ok', 'IQR', 'MAD', 'IQR and MAD')
     # create map
     leaflet::leaflet(data) %>%
       leaflet::addProviderTiles("CartoDB.Positron") %>%
-      leaflet::addCircleMarkers(lat = ~decimalLatitude, lng = ~decimalLongitude,
+      leaflet::addCircleMarkers(lat = ~sample_latitude_dd, lng = ~sample_longitude_dd,
                        radius = ~radius, weight = 0, fillColor = ~color, fillOpacity = 1) %>%
       leaflet::addLegend("topright", colors = cols, labels = legend,
                 title = title,
