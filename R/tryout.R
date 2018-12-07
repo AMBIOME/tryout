@@ -1,9 +1,9 @@
-#' autoQC: Automatic quality control of physical, chemical and marine biological data
+#' tryout: Automatic quality control of physical, chemical and marine biological data
 #'
 #' Control data sets submitted to the Swedish Oceanographic data center SHARK (<https://sharkweb.smhi.se/>). It can also be used for checking the quality of a set of marine species distribution records.
 #'
 #' @docType package
-#' @name obistools
+#' @name tryout
 #' @import dplyr
 #' @import ggplot2
 #' @import sp
