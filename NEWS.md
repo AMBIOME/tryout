@@ -1,3 +1,3 @@
-# obistools 0.0.5
+# obistools 0.0.1
 
-Initial release of the obistools package on CRAN.
+Initial release of the tryout package on github.
