@@ -129,12 +129,12 @@ check_depth <- function(data, report = FALSE, depthmargin = 0, shoremargin = NA,
   }
 
   # handle longitude/latitude outside bathymetry raster / world bounds
-  wrong_x <- is.na(data$decimalLongitude) | data$decimalLongitude < xmin | data$decimalLongitude > xmax
-  wrong_y <- is.na(data$decimalLatitude) | data$decimalLatitude < ymin | data$decimalLatitude > ymax
-  result <- add_depth_message(result, data, "decimalLongitude", wrong_x, "Longitude [%s] is outside the bounds of the provided raster (%s)", rep(paste(xmin, xmax), nrow(data)), level="warning")
-  result <- add_depth_message(result, data, "decimalLatitude", wrong_y, "Latitude [%s] is outside the bounds of the provided raster (%s)", rep(paste(ymin, ymax), nrow(data)), level="warning")
+  wrong_x <- is.na(data$sample_longitude_dd) | data$sample_longitude_dd < xmin | data$sample_longitude_dd > xmax
+  wrong_y <- is.na(data$sample_latitude_dd) | data$sample_latitude_dd < ymin | data$sample_latitude_dd > ymax
+  result <- add_depth_message(result, data, "sample_longitude_dd", wrong_x, "Longitude [%s] is outside the bounds of the provided raster (%s)", rep(paste(xmin, xmax), nrow(data)), level="warning")
+  result <- add_depth_message(result, data, "sample_latitude_dd", wrong_y, "Latitude [%s] is outside the bounds of the provided raster (%s)", rep(paste(ymin, ymax), nrow(data)), level="warning")
   # handle NA values in raster/lookup
-  result <- add_depth_message(result, data, "decimalLongitude", is.na(lookupvalues$bathymetry), "No bathymetry value found for coordinate (%s, %s)", level="warning", extra_data = data$decimalLatitude)
+  result <- add_depth_message(result, data, "sample_longitude_dd", is.na(lookupvalues$bathymetry), "No bathymetry value found for coordinate (%s, %s)", level="warning", extra_data = data$sample_latitude_dd)
 
   if (!report) {
     result <- original_data[sort(unique(stats::na.omit(result$row))),]
