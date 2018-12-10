@@ -61,7 +61,7 @@ check_onland <- function(data, land = NULL, report = FALSE, buffer=0, offline = 
         message = paste0("Coordinates are located on land")
       ))
     } else {
-      return(data_frame())
+      return(data_frame(message = paste0("All coordinates are located at sea")))
     }
   } else {
     return(data[i,])
