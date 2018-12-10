@@ -115,7 +115,7 @@ check_depth <- function(data, report = FALSE, depthmargin = 0, shoremargin = NA,
     stop("bathymetry should be a raster")
   }
 
-  depthcols <- c('minimumDepthInMeters', 'maximumDepthInMeters')
+  depthcols <- c('sample_min_depth_m', 'sample_max_depth_m')
 
   if(all(depthcols %in% colnames(data))) {
     mind <- as.numeric(as.character(data[,depthcols[1]]))
