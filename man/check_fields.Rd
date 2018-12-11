@@ -1,7 +1,7 @@
 % Please edit documentation in R/check_fields.R
 \name{check_fields}
 \alias{check_fields}
-\title{Check if the required and recommended SHARK fields are present.}
+\title{Check if the required and recommended global SHARK fields are present.}
 \usage{
 check_fields(data, level = "error")
 }
