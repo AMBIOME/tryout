@@ -1,54 +1,26 @@
 #' Taxon matching using Dyntaxa (https://dyntaxa.se)
-#'
+#' matches dyntaxa_id in data with TaxonId in the supplied dyntaxa list (dyntaxa_list)
 #' @param names Vector of scientific names.
 #' @param ask Ask user in case of multiple matches.
 #' @return Data frame with scientific name, scientific name ID and match type.
 #' @export
 match_taxa <- function(names, ask = TRUE) {
 
-  f <- as.factor(names)
-  indices <- as.numeric(f)
-  unames <- levels(f)
+  matches <- unlist(lapply(names, dyntaxa_list$TaxonId), recursive = FALSE)
 
-  pages <- split(unames, as.integer((seq_along(unames) - 1) / 50))
-  paged_worms_taxamatch_call <- function(page) { cache_call(page, expression(worrms::wm_records_taxamatch(page)))}
-  matches <- unlist(lapply(pages, paged_worms_taxamatch_call), recursive = FALSE)
-  # matches <- worms::matchAphiaRecordsByNames(unames)
+  results <- data.frame(scientificName = character(), scientificNameID = character(), stringsAsFactors = FALSE)
 
-  results <- data.frame(scientificName = character(), scientificNameID = character(), match_type = character(), stringsAsFactors = FALSE)
-
-  # count no matches and multiple matches
+  # count no matches
 
   no <- NULL
-  multiple <- NULL
-  for (i in 1:length(matches)) {
+   for (i in 1:length(matches)) {
     if (is.data.frame(matches[[i]])) {
-      if (nrow(matches[[i]]) > 1) {
-        multiple <- c(multiple, unames[i])
-      }
-    } else {
+      } else {
       no <- c(no, unames[i])
     }
   }
 
-  message(sprintf("%s names, %s without matches, %s with multiple matches", length(unames), length(no), length(multiple)))
-
-  # ask user to resolve names, skip, or print names with multiple matches
-
-  if (ask) {
-    proceed <- NA
-    while (is.na(proceed)) {
-      r <- readline(prompt = "Proceed to resolve names (y/n/info)? ")
-      if (r == "y") {
-        proceed <- TRUE
-      } else if (r == "n") {
-        proceed <- TRUE
-        ask <- FALSE
-      } else if (substr(r, 1, 1) == "i") {
-        print(multiple)
-      }
-    }
-  }
+  message(sprintf("%s names, %s without matches, length(unames), length(no)))
 
   # populate data frame
 
