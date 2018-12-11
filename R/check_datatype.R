@@ -13,49 +13,7 @@
 check_Bacterioplankton <- function(data, level = "error") {
 
     errors <- data_frame()
-    required <- c("visit.visit_year",
-"visit.visit_date",
-"visit.reported_station_name",
-"visit.platform_code",
-"visit.water_land_station_type_code",
-"visit.water_depth_m",
-"visit.visit_reported_latitude",
-"visit.visit_reported_longitude",
-"sample.sample_id",
-"sample.sample_series",
-"sample.sample_time",
-"sample.sample_depth_m",
-"sample.sample_project_code",
-"sample.sample_orderer_code",
-"sample.monitoring_program_code",
-"sample.sampling_laboratory_code",
-"sample.sampling_laboratory_accreditated",
-"sample.method_reference_code",
-"sample.sample_comment",
-"sample.sampler_type_code",
-"sample.sampled_volume_l",
-"sample.sample_reported_latitude",
-"sample.sample_reported_longitude",
-"variable.analysis_method_code",
-"variable.analytical_laboratory_code",
-"variable.analytical_laboratory_accreditated",
-"variable.analysed_by",
-"variable.analysis_date",
-"variable.analysed_volume_cm3",
-"variable.variable_comment",
-"variable.counted_portions",
-"variable.coefficient",
-"variable.sample_part_id",
-"variable.preservation_method_code",
-"variable.QFLAG.Bacterial concentration",
-"variable.QFLAG.Bacterial production",
-"variable.QFLAG.Bacterial cell volume",
-"variable.COPY_VARIABLE.Bacterial concentration.cells/l",
-"variable.COPY_VARIABLE.Bacterial production.cells/l/d",
-"variable.COPY_VARIABLE_MULTIPLY.Bacterial concentration.cells/l.1000",
-"variable.COPY_VARIABLE.Bacterial cell volume.um3/cell",
-"variable.COPY_VARIABLE.Bacterial cell carbon content.fg C/cell"
-)
+    required <- c()
     recommended <- c()
 
     # find missing required fields
@@ -125,61 +83,7 @@ check_Bacterioplankton <- function(data, level = "error") {
 check_chlorophyll <- function(data, level = "error") {
 
     errors <- data_frame()
-    required <- c("visit.visit_id",
-"visit.visit_year",
-"visit.visit_date",
-"sample.sample_date",
-"visit.reported_station_name",
-"visit.visit_comment",
-"visit.expedition_id",
-"visit.platform_code",
-"visit.water_land_station_type_code",
-"visit.monitoring_station_type_code",
-"visit.water_depth_m",
-"visit.wind_speed_ms",
-"visit.wave_observation_code",
-"visit.wind_direction_code",
-"visit.cloud_observation_code",
-"visit.ice_observation_code",
-"visit.weather_observation_code",
-"visit.air_temperature_degc",
-"visit.air_pressure_hpa",
-"visit.secchi_depth_m",
-"visit.secchi_depth_quality_flag",
-"visit.visit_reported_latitude",
-"visit.visit_reported_longitude",
-"visit.positioning_system_code",
-"sample.sample_id",
-"sample.sample_time",
-"sample.sample_enddate",
-"sample.sample_endtime",
-"sample.sample_min_depth_m",
-"sample.sample_max_depth_m",
-"sample.sample_project_code",
-"sample.sample_orderer_code",
-"sample.monitoring_program_code",
-"sample.sampling_laboratory_code",
-"sample.sampling_laboratory_accreditated",
-"sample.method_reference_code",
-"sample.method_documentation",
-"sample.sample_comment",
-"sample.sampler_type_code",
-"sample.sampled_volume_l",
-"variable.analysis_method_code",
-"variable.analytical_laboratory_code",
-"variable.analytical_laboratory_accreditated",
-"variable.analysis_date",
-"variable.estimation_uncertainty",
-"variable.method_calculation_uncertainty",
-"variable.detection_limit",
-"variable.quantification_limit",
-"variable.analysis_range",
-"variable.variable_comment",
-"variable.COPY_VARIABLE.Chlorophyll-a.ug/l",
-"TEMP.QFLAG.Chlorophyll-a",
-"variable.SFLAG.Chlorophyll-a",
-"visit.monitoring_purpose_code"
-)
+    required <- c()
     recommended <- c()
 
     # find missing required fields
@@ -250,192 +154,7 @@ check_chlorophyll <- function(data, level = "error") {
 check_epibenthos <- function(data, level = "error") {
 
     errors <- data_frame()
-    required <- c("dataset.reporting_institute_code",
-"dataset.reported_by",
-"visit.visit_id",
-"visit.visit_year",
-"visit.visit_date",
-"visit.reported_station_name",
-"visit.visit_comment",
-"visit.TEMP.add_to_visit_comment",
-"visit.expedition_id",
-"visit.station_N2000_code",
-"visit.platform_code",
-"visit.station_marking",
-"visit.station_photo",
-"visit.station_cluster",
-"visit.water_land_station_type_code",
-"visit.sea_area",
-"visit.monitoring_purpose_code",
-"visit.wind_speed_ms",
-"visit.wave_height_m",
-"visit.wind_direction_code",
-"visit.water_level_deviation_m",
-"visit.wave_exposure_fetch",
-"visit.station_exposure",
-"visit.visit_reported_latitude",
-"visit.visit_reported_longitude",
-"visit.positioning_system_code",
-"sample.sample_time",
-"sample.sample_reported_latitude",
-"sample.sample_reported_longitude",
-"sample.sample_id",
-"variable.sample_part_id",
-"sample.sample_series",
-"sample.sample_depth_m",
-"sample.sample_project_code",
-"sample.project_purpose",
-"sample.sample_orderer_code",
-"sample.monitoring_program_code",
-"sample.sampling_laboratory_code",
-"sample.method_documentation",
-"sample.sample_comment",
-"sample.sample_cluster",
-"sample.bottom_slope_deg",
-"sample.sample_substrate_cover_softbottom",
-"sample.sample_substrate_cover_gravel",
-"sample.sample_substrate_cover_rock",
-"sample.sample_substrate_comnt_rock",
-"sample.sample_substrate_comnt_gravel",
-"sample.sample_substrate_comnt_softbottom",
-"TEMP.substrate",
-"TEMP.substrate_code",
-"TEMP.substrate_cover",
-"TEMP.substrate_comment",
-"visit.transect_id",
-"sample.transect_id",
-"sample.transect_start_latitude_dm",
-"sample.transect_start_longitude_dm",
-"sample.transect_end_latitude_dm",
-"sample.transect_end_longitude_dm",
-"sample.transect_start_latitude_dd",
-"sample.transect_start_longitude_dd",
-"sample.transect_end_latitude_dd",
-"sample.transect_end_longitude_dd",
-"sample.transect_direction_deg",
-"sample.transect_min_distance_m",
-"sample.transect_max_distance_m",
-"sample.transect_min_depth_m",
-"sample.transect_max_depth_m",
-"sample.transect_start_depth_m",
-"sample.transect_stop_depth_m",
-"sample.transect_length_m",
-"visit.transect_width_m",
-"sample.diver_name",
-"sample.transect_video",
-"sample.transect_video_name",
-"sample.transect_video_interpreter",
-"sample.transect_protocol_writer",
-"sample.transect_interpretation_time",
-"sample.transect_cover_soft_bottom",
-"sample.transect_cover_hard_bottom",
-"sample.transect_comment",
-"sample.section_start_latitude_dm",
-"sample.section_start_longitude_dm",
-"sample.section_start_latitude_dd",
-"sample.section_start_longitude_dd",
-"sample.section_end_latitude_dd",
-"sample.section_end_longitude_dd",
-"sample.section_start_depth_m",
-"sample.section_end_depth_m",
-"sample.section_distance_start_m",
-"sample.section_distance_end_m",
-"sample.section_start_interpretation",
-"sample.section_stop_interpretation",
-"sample.section_fauna_flora_found",
-"sample.section_debris_cover",
-"sample.section_bare_substrate",
-"sample.section_transect",
-"sample.section_hard_clay_cover_class",
-"sample.section_silt_soft_clay_cover_class",
-"sample.section_sand_cover_class",
-"sample.section_gravel_cover_class",
-"sample.section_stone_cover_class",
-"sample.section_boulder_cover_class",
-"sample.section_rock_cover_class",
-"sample.section_shell_gravel_cover_class",
-"sample.section_shell_cover_class",
-"sample.section_bare_substrate_cover_class",
-"sample.section_debris_cover_class",
-"sample.section_epi_zostera_cover_class",
-"sample.section_unidentified_plantae_cover_class",
-"sample.section_nassarius_tracks_cover_class",
-"sample.section_paguridae_tracks_cover_class",
-"sample.section_animalia_burrows_cover_class",
-"sample.section_animalia_tracks_cover_class",
-"sample.section_unidentified_algae_cover_class",
-"TEMP.sect_substrate",
-"TEMP.sect_substrate_code",
-"TEMP.sect_substrate_cover",
-"TEMP.sect_substrate_comment",
-"sample.section_comment",
-"sample.sampler_type_code",
-"sample.sampler_area_m2",
-"sample.sampler_area_cm2",
-"sample.video_interpreted",
-"sample.sediment_deposition_code",
-"sample.fauna_flora_found",
-"sample.image_name",
-"sample.image_stop_time",
-"sample.sample_photo_code",
-"sample.sample_reported_latitude",
-"sample.sample_reported_longitude",
-"sample.method_comment",
-"variable.analysis_method_code",
-"variable.analytical_laboratory_code",
-"variable.analysed_by",
-"variable.variable_comment",
-"variable.dyntaxa_id",
-"variable.size_class",
-"variable.species_flag_code",
-"variable.stratum_code",
-"variable.reported_scientific_name",
-"variable.taxonomist",
-"variable.size_class_range_min",
-"variable.size_class_range_max",
-"variable.epibiont",
-"variable.degree_biofouling",
-"variable.bitemark",
-"variable.reproductive_organs",
-"variable.recruits",
-"variable.detached",
-"variable.taxon_photo",
-"variable.preservation_method_code",
-"visit.monitoring_station_type_code",
-"variable.COPY_VARIABLE.# counted.ind",
-"variable.COPY_VARIABLE_MULTIPLY.Abundance.ind/m2.4",
-"variable.COPY_VARIABLE.Cover class.class",
-"sample.CREATE_VARIABLE.Cover class filamentous algae.class",
-"variable.COPY_VARIABLE.Cover (%).%",
-"sample.CREATE_VARIABLE.Total cover of all species (%).%",
-"sample.CREATE_VARIABLE.Temperature.C",
-"sample.CREATE_VARIABLE.Turbidity.NTU",
-"sample.CREATE_VARIABLE.Salinity.ppt",
-"variable.COPY_VARIABLE.Maximum height.m?",
-"variable.COPY_VARIABLE.Average height.cm?",
-"variable.COPY_VARIABLE.Reproductive organs.class",
-"variable.COPY_VARIABLE.Bite marks.class",
-"variable.COPY_VARIABLE.Recruitment.class",
-"variable.COPY_VARIABLE.Shoot density.ind/m2",
-"variable.COPY_VARIABLE.Shoot biomass.g dry weight/m2",
-"variable.COPY_VARIABLE.Min shoot length.cm",
-"variable.COPY_VARIABLE.Max shoot length.cm",
-"variable.COPY_VARIABLE.Average shoot length.cm",
-"variable.COPY_VARIABLE.Rhizome biomass.g dry weight/m2",
-"variable.COPY_VARIABLE.Rhizome juice sugar content. % by volume",
-"visit.secchi_depth_quality_flag",
-"visit.secchi_depth_m",
-"sample.CREATE_VARIABLE.Temperature.C",
-"sample.CREATE_VARIABLE.Salinity.",
-"sample.CREATE_VARIABLE.Sediment deposition cover (%).%",
-"variable.COPY_VARIABLE.Species distribution min depth.m",
-"variable.COPY_VARIABLE.Species distribution max depth.m",
-"variable.COPY_VARIABLE.Dry weight.g",
-"variable.COPY_VARIABLE.Abundance class.class",
-"variable.COPY_VARIABLE.Depth distribution (max depth).m",
-"variable.COPY_VARIABLE.Density in covered area.%",
-"variable.COPY_VARIABLE.Substrate specific cover.%",
-)
+    required <- c()
     recommended <- c()
 
     # find missing required fields
@@ -506,58 +225,7 @@ check_epibenthos <- function(data, level = "error") {
 check_EpibenthosDropvideo <- function(data, level = "error") {
 
     errors <- data_frame()
-    required <- c("visit.visit_year",
-"visit.visit_date",
-"visit.reported_station_name",
-"visit.station_N2000_code",
-"sample.sample_project_code",
-"sample.sample_orderer_code",
-"sample.sampling_laboratory_code",
-"sample.sampling_laboratory_accreditated",
-"sample.method_documentation",
-"visit.visit_comment",
-"sample.transect_start_latitude_dd",
-"sample.transect_start_longitude_dd",
-"sample.transect_end_latitude_dd",
-"sample.transect_end_longitude_dd",
-"sample.transect_start_depth_m",
-"sample.transect_stop_depth_m",
-"visit.positioning_system_code",
-"sample.transect_video_name",
-"sample.transect_video_interpreter",
-"sample.transect_protocol_writer",
-"sample.transect_interpretation_time",
-"variable.section_cover_soft_bottom",
-"variable.section_cover_hard_bottom",
-"variable.section_hard_clay_cover_class",
-"variable.section_silt_soft_clay_cover_class",
-"variable.section_sand_cover_class",
-"variable.section_gravel_cover_class",
-"variable.section_stone_cover_class",
-"variable.section_stone_cover_20_60_class",
-"variable.section_stone_cover_60_200_class",
-"variable.section_boulder_cover_class",
-"variable.section_rock_cover_class",
-"variable.section_shell_gravel_cover_class",
-"variable.section_shell_cover_class",
-"variable.section_bare_substrate_cover_class",
-"variable.section_debris_cover_class",
-"variable.section_epi_zostera_cover_class",
-"variable.section_unidentified_plantae_cover_class",
-"variable.section_nassarius_tracks_cover_class",
-"variable.section_paguridae_tracks_cover_class",
-"variable.section_animalia_burrows_cover_class",
-"variable.section_animalia_tracks_cover_class",
-"variable.section_unidentified_algae_cover_class",
-"variable.section_comment",
-"sample.sampler_type_code",
-"variable.image_sequence",
-"variable.image_stop_time",
-"sample.CREATE_VARIABLE.Sediment depos cover (class).class",
-"visit.secchi_depth_m",
-"visit.secchi_depth_quality_flag",
-"sample.CREATE_VARIABLE.Salinity."
-)
+    required <- c()
     recommended <- c()
 
     # find missing required fields
@@ -627,76 +295,7 @@ check_EpibenthosDropvideo <- function(data, level = "error") {
 check_GreySeal <- function(data, level = "error") {
 
     errors <- data_frame()
-    required <- c("visit.visit_year",
-"visit.visit_date",
-"visit.reported_station_name",
-"visit.visit_reported_latitude",
-"visit.visit_reported_longitude",
-"visit.county",
-"visit.obspoint",
-"visit.wind_speed_ms",
-"visit.wind_direction_code",
-"visit.weather_observation_code",
-"visit.visit_reported_latitude",
-"visit.visit_reported_longitude",
-"sample.sample_id",
-"sample.sampling_laboratory_code",
-"sample.sampling_laboratory_accreditated",
-"sample.sampled_by",
-"sample.observation_distance_m",
-"variable.variable_comment",
-"variable.reported_scientific_name",
-"variable.COPY_VARIABLE.# counted.ind",
-"variable.COPY_VARIABLE.Total # counted on land.ind",
-"variable.COPY_VARIABLE.Total # counted in water.ind",
-"variable.COPY_VARIABLE.# pups counted on land.ind",
-"visit.visit_year",
-"visit.reported_station_name",
-"sample.sample_project_code",
-"sample.sample_orderer_code",
-"visit.expedition_id",
-"visit.visit_date",
-"visit.visit_reported_latitude",
-"visit.visit_reported_longitude",
-"visit.positioning_system_code",
-"visit.county",
-"visit.water_depth_m",
-"visit.monitoring_station_type_code",
-"visit.monitoring_purpose_code",
-"sample.monitoring_program_code",
-"visit.visit_comment",
-"visit.wind_direction_code",
-"visit.wind_speed_ms",
-"visit.air_temperature_degc",
-"visit.air_pressure_hpa",
-"visit.weather_observation_code",
-"visit.cloud_observation_code",
-"visit.wave_observation_code",
-"visit.ice_observation_code",
-"sample.sample_time",
-"sample.fauna_flora_found",
-"sample.sampling_laboratory_code",
-"sample.sampling_laboratory_accreditated",
-"sample.sampler_type_code",
-"sample.sampled_by",
-"visit.obspoint",
-"visit.observation_distance_m",
-"sample.image_id",
-"sample.sample_id",
-"sample.sample_comment",
-"variable.reported_scientific_name",
-"variable.COPY_VARIABLE.# counted.ind",
-"variable.COPY_VARIABLE.# counted.ind",
-"variable.COPY_VARIABLE.Total # counted on land.ind",
-"variable.COPY_VARIABLE.Total # counted in water.ind",
-"variable.COPY_VARIABLE.# pups counted on land.ind",
-"variable.analytical_laboratory_code",
-"variable.analytical_laboratory_accreditated",
-"variable.analysis_date",
-"sample.method_documentation",
-"sample.method_reference_code",
-"variable.variable_comment"
-)
+    required <- c()
     recommended <- c()
 
     # find missing required fields
@@ -767,34 +366,7 @@ check_GreySeal <- function(data, level = "error") {
 check_HarbourPorpoise <- function(data, level = "error") {
 
     errors <- data_frame()
-    required <- c("visit.visit_year",
-"visit.reported_station_name",
-"sample.sample_project_code",
-"sample.sample_orderer_code",
-"visit.visit_date",
-"visit.visit_enddate",
-"sample.sample_time",
-"sample.sample_endtime",
-"visit.positioning_system_code",
-"visit.monitoring_purpose_code",
-"sample.monitoring_program_code",
-"visit.visit_comment",
-"sample.sampling_laboratory_code",
-"sample.sampling_laboratory_accreditated",
-"sample.sampler_type_code",
-"sample.method_documentation",
-"sample.sample_comment",
-"variable.reported_scientific_name",
-"variable.observation_date",
-"variable.observation_time",
-"variable.analytical_laboratory_code",
-"variable.analytical_laboratory_accreditated",
-"sample.unanalysed_original_data",
-"variable.variable_comment",
-"visit.country_code",
-"sample.sample_reported_latitude",
-"sample.sample_reported_longitude",
-"variable.COPY_VARIABLE.Porpoise positive minute.Y/N")
+    required <- c()
     recommended <- c()
 
     # find missing required fields
@@ -865,30 +437,7 @@ check_HarbourPorpoise <- function(data, level = "error") {
 check_HarbourSeal <- function(data, level = "error") {
 
     errors <- data_frame()
-    required <- c("visit.visit_year",
-"visit.visit_date",
-"visit.reported_station_name",
-"sample.sample_comment",
-"visit.sea_region",
-"visit.visit_reported_latitude",
-"visit.visit_reported_longitude",
-"visit.obspoint",
-"sample.sample_time",
-"sample.sample_project_code",
-"sample.sample_orderer_code",
-"sample.sampling_laboratory_code",
-"sample.sampling_laboratory_accreditated",
-"sample.method_documentation",
-"sample.sampler_type_code",
-"sample.fauna_flora_found",
-"sample.image_id",
-"variable.analytical_laboratory_code",
-"variable.analytical_laboratory_accreditated",
-"variable.variable_comment",
-"variable.species_flag_code",
-"variable.reported_scientific_name",
-"variable.taxonomist",
-"variable.COPY_VARIABLE.# counted.ind")
+    required <- c()
     recommended <- c()
 
     # find missing required fields
@@ -959,127 +508,7 @@ check_HarbourSeal <- function(data, level = "error") {
 check_PhysicalChemical <- function(data, level = "error") {
 
     errors <- data_frame()
-    required <- c("visit.visit_year",
-"sample.sample_project_code",
-"sample.sample_orderer_code",
-"visit.visit_date",
-"sample.sample_time",
-"sample.sample_enddate",
-"sample.sample_endtime",
-"visit.platform_code",
-"visit.expedition_id",
-"visit.visit_id",
-"visit.reported_station_name",
-"visit.visit_reported_latitude",
-"visit.visit_reported_longitude",
-"visit.positioning_system_code",
-"visit.water_depth_m",
-"visit.additional_sampling",
-"visit.visit_comment",
-"visit.wind_direction_code",
-"visit.wind_speed_ms",
-"visit.air_temperature_degc",
-"visit.air_temperature_wet_degc",
-"visit.air_pressure_hpa",
-"visit.weather_observation_code",
-"visit.cloud_observation_code",
-"visit.wave_observation_code",
-"visit.ice_observation_code",
-"variable.COPY_VARIABLE.Secchi depth.m",
-"TEMP.QFLAG.Secchi depth",
-"sample.sample_id",
-"sample.sample_depth_m",
-"variable.COPY_VARIABLE.Pressure CTD.dbar",
-"TEMP.QFLAG.Pressure CTD",
-"sample.sample_min_depth_m",
-"sample.sample_max_depth_m",
-"variable.COPY_VARIABLE.Temperature bottle.C",
-"TEMP.QFLAG.Temperature bottle",
-"variable.COPY_VARIABLE.Temperature CTD.C",
-"TEMP.QFLAG.Temperature CTD",
-"variable.COPY_VARIABLE.Salinity bottle.o/oo psu",
-"TEMP.QFLAG.Salinity bottle",
-"variable.COPY_VARIABLE.Salinity CTD.o/oo psu",
-"TEMP.QFLAG.Salinity CTD",
-"variable.COPY_VARIABLE.Conductivity_25 bottle.mS/m",
-"TEMP.QFLAG.Conductivity_25 bottle",
-"variable.COPY_VARIABLE.Conductivity CTD.mS/m",
-"TEMP.QFLAG.Conductivity CTD",
-"variable.COPY_VARIABLE.Dissolved oxygen O2 bottle.ml/l",
-"TEMP.QFLAG.Dissolved oxygen O2 bottle",
-"variable.COPY_VARIABLE.Dissolved oxygen O2 CTD.ml/l",
-"TEMP.QFLAG.Dissolved oxygen O2 CTD",
-"variable.COPY_VARIABLE.Hydrogen sulphide H2S.umol/l",
-"TEMP.QFLAG.Hydrogen sulphide H2S",
-"variable.COPY_VARIABLE.pH.",
-"TEMP.QFLAG.pH",
-"variable.COPY_VARIABLE.pH Laboratory.",
-"TEMP.QFLAG.pH Laboratory",
-"variable.COPY_VARIABLE.Temperature pH Laboratory.C",
-"TEMP.QFLAG.Temperature pH Laboratory",
-"variable.COPY_VARIABLE.Alkalinity.mmol/kg",
-"TEMP.QFLAG.Alkalinity",
-"variable.COPY_VARIABLE.Alkalinity_2.mmol/l",
-"TEMP.QFLAG.Alkalinity_2",
-"variable.COPY_VARIABLE.Phosphate PO4-P.umol/l",
-"TEMP.QFLAG.Phosphate PO4-P",
-"variable.COPY_VARIABLE.Total phosphorus Tot-P.umol/l",
-"TEMP.QFLAG.Total phosphorus Tot-P",
-"variable.COPY_VARIABLE.Nitrite NO2-N.umol/l",
-"TEMP.QFLAG.Nitrite NO2-N",
-"variable.COPY_VARIABLE.Nitrate NO3-N.umol/l",
-"TEMP.QFLAG.Nitrate NO3-N",
-"variable.COPY_VARIABLE.Nitrite+Nitrate NO2+NO3-N.umol/l",
-"TEMP.QFLAG.Nitrite+Nitrate NO2+NO3-N",
-"variable.COPY_VARIABLE.Ammonium NH4-N.umol/l",
-"TEMP.QFLAG.Ammonium NH4-N",
-"variable.COPY_VARIABLE.Total Nitrogen Tot-N.umol/l",
-"TEMP.QFLAG.Total Nitrogen Tot-N.umol/l",
-"variable.COPY_VARIABLE.Silicate SiO3-Si.umol/l",
-"TEMP.QFLAG.Silicate SiO3-Si",
-"variable.COPY_VARIABLE.Humus.ug/l",
-"TEMP.QFLAG.Humus",
-"variable.COPY_VARIABLE.Chlorophyll-a bottle.ug/l",
-"TEMP.QFLAG.Chlorophyll-a bottle",
-"variable.COPY_VARIABLE.Dissovled organic carbon DOC.umol/l",
-"TEMP.QFLAG.Dissovled organic carbon DOC",
-"variable.COPY_VARIABLE.Particulate organic carbon POC.umol/l",
-"TEMP.QFLAG.Particulate organic carbon POC",
-"variable.COPY_VARIABLE.Total organic carbon TOC.mg/l",
-"TEMP.QFLAG.Total organic carbon TOC",
-"variable.COPY_VARIABLE.Particulate org nitrogen PON.umol/l",
-"TEMP.QFLAG.Particulate org nitrogen PON",
-"variable.COPY_VARIABLE.Current direction.deca degrees",
-"TEMP.QFLAG.Current direction",
-"variable.COPY_VARIABLE.Current velocity.cm/s",
-"TEMP.QFLAG.Current velocity",
-"variable.COPY_VARIABLE.Lignin.mg/l",
-"TEMP.QFLAG.Lignin",
-"variable.COPY_VARIABLE.Yellow substance.1/l",
-"TEMP.QFLAG.Yellow substance",
-"variable.COPY_VARIABLE.Aluminium.ug/l",
-"TEMP.QFLAG.Aluminium",
-"variable.COPY_VARIABLE.Urea.umol/l",
-"TEMP.QFLAG.Urea",
-"variable.COPY_VARIABLE.Colored dissolved organic matter CDOM.1/m",
-"TEMP.QFLAG.Colored dissolved organic matter CDOM",
-"sample.sample_comment",
-"variable.analysis_method_code",
-"variable.analysis_method_reference_code",
-"variable.variable_comment",
-"variable.estimation_uncertainty",
-"variable.method_calculation_uncertainty",
-"variable.quantification_limit",
-"variable.detection_limit",
-"variable.analysis_range",
-"variable.analytical_laboratory_code",
-"variable.analytical_laboratory_accreditated",
-"variable.sampler_type_code_phyche",
-"variable.sampling_method_reference_code_phyche",
-"variable.sampling_method_comment_phyche",
-"variable.sampling_laboratory_code_phyche",
-"variable.sampling_laboratory_accreditated_phyche"
-)
+    required <- c()
     recommended <- c()
 
     # find missing required fields
@@ -1150,8 +579,7 @@ check_PhysicalChemical <- function(data, level = "error") {
 check_Phytoplankton <- function(data, level = "error") {
 
     errors <- data_frame()
-    required <- c(delivery_datatype	check_status_sv	data_checked_by_sv	visit_year	station_name	reported_station_name	sample_project_name_sv	sample_orderer_name_sv	platform_code	expedition_id	shark_sample_id_md5	sample_date	sample_time	sample_latitude_dm	sample_longitude_dm	sample_latitude_dd	sample_longitude_dd	positioning_system_code	water_depth_m	wind_direction_code	wind_speed_ms	air_temperature_degc	air_pressure_hpa	weather_observation_code	cloud_observation_code	wave_observation_code	wave_exposure_fetch	ice_observation_code	secchi_depth_m	secchi_depth_quality_flag	visit_comment	sample_series	sample_id	sample_min_depth_m	sample_max_depth_m	sampling_laboratory_name_sv	sampling_laboratory_accreditated	sampler_type_code	sampled_volume_l	plankton_sampling_method_code	sample_comment	scientific_name	species_flag_code	dyntaxa_id	parameter	value	unit	quality_flag	calc_by_dc	trophic_type_code	size_class	size_min_um	size_max_um	size_class_ref_list	reported_cell_volume_um3	sample_part_id	taxonomist	analysis_method_code	counter_program	method_documentation	method_reference_code	method_comment	variable_comment	analytical_laboratory_name_sv	analytical_laboratory_accreditated	analysis_date	preservation_method_code	mesh_size_um	sedimentation_volume_ml	sedimentation_time_h	coefficient	magnification	station_viss_eu_id	water_land_station_type_code	monitoring_station_type_code	monitoring_purpose_code	monitoring_program_code	reported_scientific_name	reported_parameter	reported_value	reported_unit	reporting_institute_name_sv	data_holding_centre	internet_access	dataset_name	dataset_file_name
-)
+    required <- c("delivery_datatype","check_status_sv","data_checked_by_sv","visit_year","station_name","reported_station_name","sample_project_name_sv","sample_orderer_name_sv","platform_code","expedition_id","shark_sample_id_md5","sample_date","sample_time","sample_latitude_dm","sample_longitude_dm","sample_latitude_dd","sample_longitude_dd","positioning_system_code","water_depth_m","wind_direction_code","wind_speed_ms","air_temperature_degc","air_pressure_hpa","weather_observation_code","cloud_observation_code","wave_observation_code","wave_exposure_fetch","ice_observation_code","secchi_depth_m","secchi_depth_quality_flag","visit_comment","sample_series","sample_id","sample_min_depth_m","sample_max_depth_m","sampling_laboratory_name_sv","sampling_laboratory_accreditated","sampler_type_code","sampled_volume_l","plankton_sampling_method_code","sample_comment","scientific_name","species_flag_code","dyntaxa_id","parameter","value","unit","quality_flag","calc_by_dc","trophic_type_code","size_class","size_min_um","size_max_um","size_class_ref_list","reported_cell_volume_um3","sample_part_id","taxonomist","analysis_method_code","counter_program","method_documentation","method_reference_code","method_comment","variable_comment","analytical_laboratory_name_sv","analytical_laboratory_accreditated","analysis_date","preservation_method_code","mesh_size_um","sedimentation_volume_ml","sedimentation_time_h","coefficient","magnification","station_viss_eu_id","water_land_station_type_code","monitoring_station_type_code","monitoring_purpose_code","monitoring_program_code","reported_scientific_name","reported_parameter","reported_value","reported_unit","reporting_institute_name_sv","data_holding_centre","internet_access","dataset_name","dataset_file_name")
     recommended <- c()
 
     # find missing required fields
@@ -1222,8 +650,8 @@ check_Phytoplankton <- function(data, level = "error") {
 check_Picoplankton <- function(data, level = "error") {
 
     errors <- data_frame()
-    required <- c("visit_year", "station_name", "sample_project_name_sv", "sample_orderer_name_sv", "platform_code", "sample_date", "sample_latitude_dd", "sample_longitude_dd", "positioning_system_code", "water_depth_m")
-    recommended <- c("monitoring_station_type_code", "monitoring_purpose_code", "monitoring_program_code", "reporting_institute_name_sv", "analytical_laboratory_name_sv")
+    required <- c("delivery_datatype","check_status_sv","data_checked_by_sv","visit_year","station_name","reported_station_name","sample_project_name_sv","sample_orderer_name_sv","platform_code","expedition_id","shark_sample_id_md5","sample_date","sample_time","sample_latitude_dm","sample_longitude_dm","sample_latitude_dd","sample_longitude_dd","positioning_system_code","water_depth_m","wind_direction_code","wind_speed_ms","air_temperature_degc","air_pressure_hpa","weather_observation_code","cloud_observation_code","wave_observation_code","wave_exposure_fetch","ice_observation_code","secchi_depth_m","secchi_depth_quality_flag","visit_comment","sample_series","sample_id","sample_min_depth_m","sample_max_depth_m","sampling_laboratory_name_sv","sampling_laboratory_accreditated","sampler_type_code","sampled_volume_l","plankton_sampling_method_code","flowmeter_length_m","sample_comment","scientific_name","species_flag_code","dyntaxa_id","parameter","value","unit","quality_flag","calc_by_dc","trophic_type_code","size_class","size_min_um","size_max_um","size_class_ref_list","reported_cell_volume_um3","sample_part_id","taxonomist","analysis_method_code","counter_program","method_documentation","method_reference_code","method_comment","variable_comment","analytical_laboratory_name_sv","analytical_laboratory_accreditated","analysis_date","preservation_method_code","mesh_size_um","sedimentation_volume_ml","sedimentation_time_h","wavelength_excitation","wavelength_emission","coefficient","magnification","station_viss_eu_id","water_land_station_type_code","monitoring_station_type_code","monitoring_purpose_code","monitoring_program_code","reported_scientific_name","reported_parameter","reported_value","reported_unit","reporting_institute_name_sv","data_holding_centre","internet_access","dataset_name","dataset_file_name")
+    recommended <- c()
 
     # find missing required fields
 
@@ -1293,8 +721,8 @@ check_Picoplankton <- function(data, level = "error") {
 check_PrimaryProduction <- function(data, level = "error") {
 
     errors <- data_frame()
-    required <- c("visit_year", "station_name", "sample_project_name_sv", "sample_orderer_name_sv", "platform_code", "sample_date", "sample_latitude_dd", "sample_longitude_dd", "positioning_system_code", "water_depth_m")
-    recommended <- c("monitoring_station_type_code", "monitoring_purpose_code", "monitoring_program_code", "reporting_institute_name_sv", "analytical_laboratory_name_sv")
+    required <- c("delivery_datatype","check_status_sv","data_checked_by_sv","visit_year","station_name","reported_station_name","sample_project_name_sv","sample_orderer_name_sv","platform_code","expedition_id","shark_sample_id_md5","sample_date","sample_time","sample_latitude_dm","sample_longitude_dm","sample_latitude_dd","sample_longitude_dd","positioning_system_code","water_depth_m","wind_direction_code","wind_speed_ms","weather_observation_code","cloud_observation_code","wave_observation_code","ice_observation_code","visit_comment","sample_series","sample_id","sample_min_depth_m","sample_max_depth_m","sampling_laboratory_name_sv","sampling_laboratory_accreditated","sampler_type_code","sample_comment","DPM_added","DPM_sample","DPM_darkness","parameter","value","unit","quality_flag","calc_by_dc","analysis_method_code","method_documentation","method_reference_code","variable_comment","analytical_laboratory_name_sv","analytical_laboratory_accreditated","incubation_start_time","incubation_end_time","incubation_time_h","insolation_air","incubation_radiation","station_viss_eu_id","water_land_station_type_code","monitoring_station_type_code","monitoring_purpose_code","monitoring_program_code","reporting_institute_name_sv","data_holding_centre","internet_access","dataset_name","dataset_file_name")
+    recommended <- c()
 
     # find missing required fields
 
@@ -1364,8 +792,8 @@ check_PrimaryProduction <- function(data, level = "error") {
 check_RingedSeal <- function(data, level = "error") {
 
     errors <- data_frame()
-    required <- c("visit_year", "station_name", "sample_project_name_sv", "sample_orderer_name_sv", "platform_code", "sample_date", "sample_latitude_dd", "sample_longitude_dd", "positioning_system_code", "water_depth_m")
-    recommended <- c("monitoring_station_type_code", "monitoring_purpose_code", "monitoring_program_code", "reporting_institute_name_sv", "analytical_laboratory_name_sv")
+    required <- c("delivery_datatype","check_status_sv","data_checked_by_sv","visit_year","station_name","reported_station_name","sample_project_name_sv","sample_orderer_name_sv","visit_id","visit_date","shark_sample_id_md5","sample_date","sample_time","sample_enddate","sample_endtime","sample_latitude_dm","sample_longitude_dm","sample_latitude_dd","sample_longitude_dd","water_depth_m","visit_comment","sample_id","sample_min_depth_m","sample_max_depth_m","sampling_laboratory_name_sv","sample_comment","scientific_name","species_flag_code","dyntaxa_id","parameter","value","unit","quality_flag","calc_by_dc","sex_code","dev_stage_code","trophic_type_code","size_class","method_documentation","method_reference_code","variable_comment","analytical_laboratory_name_sv","station_viss_eu_id","reported_scientific_name","reported_parameter","reported_value","reported_unit","dataset_name","dataset_file_name")
+    recommended <- c()
 
     # find missing required fields
 
@@ -1435,8 +863,8 @@ check_RingedSeal <- function(data, level = "error") {
 check_SealPathology <- function(data, level = "error") {
 
     errors <- data_frame()
-    required <- c("visit_year", "station_name", "sample_project_name_sv", "sample_orderer_name_sv", "platform_code", "sample_date", "sample_latitude_dd", "sample_longitude_dd", "positioning_system_code", "water_depth_m")
-    recommended <- c("monitoring_station_type_code", "monitoring_purpose_code", "monitoring_program_code", "reporting_institute_name_sv", "analytical_laboratory_name_sv")
+    required <- c("delivery_datatype","check_status_sv","data_checked_by_sv","visit_year","station_name","reported_station_name","sample_project_name_sv","sample_orderer_name_sv","visit_id","visit_date","shark_sample_id_md5","sample_date","sample_time","sample_enddate","sample_endtime","sample_latitude_dm","sample_longitude_dm","sample_latitude_dd","sample_longitude_dd","water_depth_m","visit_comment","sample_id","sample_min_depth_m","sample_max_depth_m","sampling_laboratory_name_sv","sample_comment","scientific_name","species_flag_code","dyntaxa_id","parameter","value","unit","quality_flag","calc_by_dc","sex_code","dev_stage_code","trophic_type_code","size_class","method_documentation","method_reference_code","variable_comment","analytical_laboratory_name_sv","station_viss_eu_id","reported_scientific_name","reported_parameter","reported_value","reported_unit","dataset_name","dataset_file_name")
+    recommended <- c()
 
     # find missing required fields
 
@@ -1506,8 +934,8 @@ check_SealPathology <- function(data, level = "error") {
 check_Sedimentation <- function(data, level = "error") {
 
     errors <- data_frame()
-    required <- c("visit_year", "station_name", "sample_project_name_sv", "sample_orderer_name_sv", "platform_code", "sample_date", "sample_latitude_dd", "sample_longitude_dd", "positioning_system_code", "water_depth_m")
-    recommended <- c("monitoring_station_type_code", "monitoring_purpose_code", "monitoring_program_code", "reporting_institute_name_sv", "analytical_laboratory_name_sv")
+    required <- c("delivery_datatype","check_status_sv","data_checked_by_sv","visit_year","station_name","reported_station_name","sample_project_name_sv","sample_orderer_name_sv","platform_code","visit_id","expedition_id","shark_sample_id_md5","sample_date","sample_time","sample_enddate","sample_latitude_dm","sample_longitude_dm","sample_latitude_dd","sample_longitude_dd","positioning_system_code","water_depth_m","wind_direction_code","wind_speed_ms","weather_observation_code","cloud_observation_code","wave_observation_code","ice_observation_code","visit_comment","sample_id","sample_min_depth_m","sample_max_depth_m","sample_depth_quality_flag","sampling_laboratory_name_sv","sampling_laboratory_accreditated","sampler_type_code","sample_comment","parameter","value","unit","quality_flag","calc_by_dc","method_documentation","method_reference_code","image_id","factors_influencing_code","aggregated_subsamples","variable_comment","analytical_laboratory_name_sv","analytical_laboratory_accreditated","preservation_method_code","mesh_size_um","method_incubation","incubation_start_time","incubation_end_time","incubation_time_h","insolation_air","salinity_correction","station_viss_eu_id","water_land_station_type_code","monitoring_station_type_code","monitoring_program_code","reporting_institute_name_sv","data_holding_centre","internet_access","dataset_name","dataset_file_name")
+    recommended <- c()
 
     # find missing required fields
 
