@@ -503,11 +503,201 @@ check_epibenthos <- function(data, level = "error") {
 }
 
 
+check_EpibenthosDropvideo <- function(data, level = "error") {
+
+    errors <- data_frame()
+    required <- c("visit.visit_year",
+"visit.visit_date",
+"visit.reported_station_name",
+"visit.station_N2000_code",
+"sample.sample_project_code",
+"sample.sample_orderer_code",
+"sample.sampling_laboratory_code",
+"sample.sampling_laboratory_accreditated",
+"sample.method_documentation",
+"visit.visit_comment",
+"sample.transect_start_latitude_dd",
+"sample.transect_start_longitude_dd",
+"sample.transect_end_latitude_dd",
+"sample.transect_end_longitude_dd",
+"sample.transect_start_depth_m",
+"sample.transect_stop_depth_m",
+"visit.positioning_system_code",
+"sample.transect_video_name",
+"sample.transect_video_interpreter",
+"sample.transect_protocol_writer",
+"sample.transect_interpretation_time",
+"variable.section_cover_soft_bottom",
+"variable.section_cover_hard_bottom",
+"variable.section_hard_clay_cover_class",
+"variable.section_silt_soft_clay_cover_class",
+"variable.section_sand_cover_class",
+"variable.section_gravel_cover_class",
+"variable.section_stone_cover_class",
+"variable.section_stone_cover_20_60_class",
+"variable.section_stone_cover_60_200_class",
+"variable.section_boulder_cover_class",
+"variable.section_rock_cover_class",
+"variable.section_shell_gravel_cover_class",
+"variable.section_shell_cover_class",
+"variable.section_bare_substrate_cover_class",
+"variable.section_debris_cover_class",
+"variable.section_epi_zostera_cover_class",
+"variable.section_unidentified_plantae_cover_class",
+"variable.section_nassarius_tracks_cover_class",
+"variable.section_paguridae_tracks_cover_class",
+"variable.section_animalia_burrows_cover_class",
+"variable.section_animalia_tracks_cover_class",
+"variable.section_unidentified_algae_cover_class",
+"variable.section_comment",
+"sample.sampler_type_code",
+"variable.image_sequence",
+"variable.image_stop_time",
+"sample.CREATE_VARIABLE.Sediment depos cover (class).class",
+"visit.secchi_depth_m",
+"visit.secchi_depth_quality_flag",
+"sample.CREATE_VARIABLE.Salinity."
+)
+    recommended <- c()
+
+    # find missing required fields
+
+    fields <- missing_fields(data, required)
+    if (length(fields) > 0) {
+      errors <- bind_rows(errors, data_frame(
+        level = "error",
+        field = fields,
+        row = NA,
+        message = paste0("Required field ", fields, " is missing")
+      ))
+    }
+
+    # find empty values for required fields
+
+    for (field in required) {
+      if (field %in% names(data)) {
+        rows <- missing_values(data[,field])
+        if (length(which(rows)) > 0) {
+          errors <- bind_rows(errors, data_frame(
+            level = "error",
+            field = field,
+            row = which(rows),
+            message = paste0("Empty value for required field ", field)
+          ))
+        }
+      }
+    }
+
+    # recommended fields
+
+    if (level == "warning") {
+
+      # find missing recommended fields
+
+      fields <- missing_fields(data, recommended)
+      if (length(fields) > 0) {
+        errors <- bind_rows(errors, data_frame(
+          field = fields,
+          level = "warning",
+          message = paste0("Recommended field ", fields, " is missing")
+        ))
+      }
+
+      # find empty values for recommended fields
+
+      for (field in recommended) {
+        if (field %in% names(data)) {
+          rows <- missing_values(data[,field])
+          if (length(which(rows)) > 0) {
+            errors <- bind_rows(errors, data_frame(
+              level = "warning",
+              field = field,
+              row = which(rows),
+              message = paste0("Empty value for recommended field ", field)
+            ))
+          }
+        }
+      }
+
+    }
+
+    return(errors)
+}
+
 check_GreySeal <- function(data, level = "error") {
 
     errors <- data_frame()
-    required <- c("visit_year", "station_name", "sample_project_name_sv", "sample_orderer_name_sv", "platform_code", "sample_date", "sample_latitude_dd", "sample_longitude_dd", "positioning_system_code", "water_depth_m")
-    recommended <- c("monitoring_station_type_code", "monitoring_purpose_code", "monitoring_program_code", "reporting_institute_name_sv", "analytical_laboratory_name_sv")
+    required <- c("visit.visit_year",
+"visit.visit_date",
+"visit.reported_station_name",
+"visit.visit_reported_latitude",
+"visit.visit_reported_longitude",
+"visit.county",
+"visit.obspoint",
+"visit.wind_speed_ms",
+"visit.wind_direction_code",
+"visit.weather_observation_code",
+"visit.visit_reported_latitude",
+"visit.visit_reported_longitude",
+"sample.sample_id",
+"sample.sampling_laboratory_code",
+"sample.sampling_laboratory_accreditated",
+"sample.sampled_by",
+"sample.observation_distance_m",
+"variable.variable_comment",
+"variable.reported_scientific_name",
+"variable.COPY_VARIABLE.# counted.ind",
+"variable.COPY_VARIABLE.Total # counted on land.ind",
+"variable.COPY_VARIABLE.Total # counted in water.ind",
+"variable.COPY_VARIABLE.# pups counted on land.ind",
+"visit.visit_year",
+"visit.reported_station_name",
+"sample.sample_project_code",
+"sample.sample_orderer_code",
+"visit.expedition_id",
+"visit.visit_date",
+"visit.visit_reported_latitude",
+"visit.visit_reported_longitude",
+"visit.positioning_system_code",
+"visit.county",
+"visit.water_depth_m",
+"visit.monitoring_station_type_code",
+"visit.monitoring_purpose_code",
+"sample.monitoring_program_code",
+"visit.visit_comment",
+"visit.wind_direction_code",
+"visit.wind_speed_ms",
+"visit.air_temperature_degc",
+"visit.air_pressure_hpa",
+"visit.weather_observation_code",
+"visit.cloud_observation_code",
+"visit.wave_observation_code",
+"visit.ice_observation_code",
+"sample.sample_time",
+"sample.fauna_flora_found",
+"sample.sampling_laboratory_code",
+"sample.sampling_laboratory_accreditated",
+"sample.sampler_type_code",
+"sample.sampled_by",
+"visit.obspoint",
+"visit.observation_distance_m",
+"sample.image_id",
+"sample.sample_id",
+"sample.sample_comment",
+"variable.reported_scientific_name",
+"variable.COPY_VARIABLE.# counted.ind",
+"variable.COPY_VARIABLE.# counted.ind",
+"variable.COPY_VARIABLE.Total # counted on land.ind",
+"variable.COPY_VARIABLE.Total # counted in water.ind",
+"variable.COPY_VARIABLE.# pups counted on land.ind",
+"variable.analytical_laboratory_code",
+"variable.analytical_laboratory_accreditated",
+"variable.analysis_date",
+"sample.method_documentation",
+"sample.method_reference_code",
+"variable.variable_comment"
+)
+    recommended <- c()
 
     # find missing required fields
 
@@ -577,8 +767,35 @@ check_GreySeal <- function(data, level = "error") {
 check_HarbourPorpoise <- function(data, level = "error") {
 
     errors <- data_frame()
-    required <- c("visit_year", "station_name", "sample_project_name_sv", "sample_orderer_name_sv", "platform_code", "sample_date", "sample_latitude_dd", "sample_longitude_dd", "positioning_system_code", "water_depth_m")
-    recommended <- c("monitoring_station_type_code", "monitoring_purpose_code", "monitoring_program_code", "reporting_institute_name_sv", "analytical_laboratory_name_sv")
+    required <- c("visit.visit_year",
+"visit.reported_station_name",
+"sample.sample_project_code",
+"sample.sample_orderer_code",
+"visit.visit_date",
+"visit.visit_enddate",
+"sample.sample_time",
+"sample.sample_endtime",
+"visit.positioning_system_code",
+"visit.monitoring_purpose_code",
+"sample.monitoring_program_code",
+"visit.visit_comment",
+"sample.sampling_laboratory_code",
+"sample.sampling_laboratory_accreditated",
+"sample.sampler_type_code",
+"sample.method_documentation",
+"sample.sample_comment",
+"variable.reported_scientific_name",
+"variable.observation_date",
+"variable.observation_time",
+"variable.analytical_laboratory_code",
+"variable.analytical_laboratory_accreditated",
+"sample.unanalysed_original_data",
+"variable.variable_comment",
+"visit.country_code",
+"sample.sample_reported_latitude",
+"sample.sample_reported_longitude",
+"variable.COPY_VARIABLE.Porpoise positive minute.Y/N")
+    recommended <- c()
 
     # find missing required fields
 
@@ -648,8 +865,31 @@ check_HarbourPorpoise <- function(data, level = "error") {
 check_HarbourSeal <- function(data, level = "error") {
 
     errors <- data_frame()
-    required <- c("visit_year", "station_name", "sample_project_name_sv", "sample_orderer_name_sv", "platform_code", "sample_date", "sample_latitude_dd", "sample_longitude_dd", "positioning_system_code", "water_depth_m")
-    recommended <- c("monitoring_station_type_code", "monitoring_purpose_code", "monitoring_program_code", "reporting_institute_name_sv", "analytical_laboratory_name_sv")
+    required <- c("visit.visit_year",
+"visit.visit_date",
+"visit.reported_station_name",
+"sample.sample_comment",
+"visit.sea_region",
+"visit.visit_reported_latitude",
+"visit.visit_reported_longitude",
+"visit.obspoint",
+"sample.sample_time",
+"sample.sample_project_code",
+"sample.sample_orderer_code",
+"sample.sampling_laboratory_code",
+"sample.sampling_laboratory_accreditated",
+"sample.method_documentation",
+"sample.sampler_type_code",
+"sample.fauna_flora_found",
+"sample.image_id",
+"variable.analytical_laboratory_code",
+"variable.analytical_laboratory_accreditated",
+"variable.variable_comment",
+"variable.species_flag_code",
+"variable.reported_scientific_name",
+"variable.taxonomist",
+"variable.COPY_VARIABLE.# counted.ind")
+    recommended <- c()
 
     # find missing required fields
 
