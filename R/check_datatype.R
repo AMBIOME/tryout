@@ -80,7 +80,7 @@ check_Bacterioplankton <- function(data, level = "error") {
     return(errors)
 }
 
-check_chlorophyll <- function(data, level = "error") {
+check_Chlorophyll <- function(data, level = "error") {
 
     errors <- data_frame()
     required <- c("visit_year","station_name","reported_station_name","sample_project_name_sv","sample_orderer_name_sv","platform_code","sample_date","sample_time","sample_enddate","sample_endtime","sample_latitude_dd","sample_longitude_dd","positioning_system_code","water_depth_m","secchi_depth_m","secchi_depth_quality_flag","sample_min_depth_m","sample_max_depth_m","sampling_laboratory_name_sv","sampling_laboratory_accreditated","sampler_type_code","sampled_volume_l","value","quality_flag","analysis_method_code","method_documentation","method_reference_code","estimation_uncertainty","method_calculation_uncertainty","quantification_limit","detection_limit","analysis_range","analytical_laboratory_name_sv","analytical_laboratory_accreditated","analysis_date","reporting_institute_name_sv")
@@ -151,7 +151,7 @@ check_chlorophyll <- function(data, level = "error") {
 }
 
 
-check_epibenthos <- function(data, level = "error") {
+check_Epibenthos <- function(data, level = "error") {
 
     errors <- data_frame()
     required <- c("visit_year","station_name","reported_station_name","sample_project_name_sv","sample_orderer_name_sv","platform_code","sample_date","sample_latitude_dd","sample_longitude_dd","positioning_system_code","sample_min_depth_m","sample_max_depth_m","sampling_laboratory_name_sv","sampler_type_code","sampler_area_m2","sampler_area_cm2","scientific_name","dyntaxa_id","value","size_class","analysis_method_code","method_documentation","image_id","sediment_deposition_code","video_interpreted","sample_photo_code","variable_comment","analytical_laboratory_name_sv","analysed_by","transect_start_latitude_dd","transect_start_longitude_dd","transect_end_latitude_dd","transect_end_longitude_dd","transect_max_depth_m","transect_min_depth_m","transect_max_distance_m","transect_min_distance_m","transect_video","transect_width_m","sample_substrate_cover_boulder","sample_substrate_comnt_boulder","sample_substrate_cover_rock","sample_substrate_comnt_rock","sample_substrate_cover_softbottom","sample_substrate_comnt_softbottom","sample_substrate_cover_stone","sample_substrate_comnt_stone","sample_substrate_cover_gravel","sample_substrate_comnt_gravel","sample_substrate_cover_sand","sample_substrate_comnt_sand","section_bare_substrate","section_comment","section_substrate_cover_boulder","section_substrate_comnt_boulder","section_substrate_cover_gravel","section_substrate_comnt_gravel","section_substrate_cover_rock","section_substrate_comnt_rock","section_substrate_cover_sand","section_substrate_comnt_sand","section_substrate_cover_softbottom","section_substrate_comnt_softbottom","section_substrate_cover_stone","section_substrate_comnt_stone","section_debris_cover","section_start_latitude_dd","section_start_longitude_dd","section_end_latitude_dd","section_end_longitude_dd","section_distance_start_m","section_distance_end_m","section_fauna_flora_found","section_start_depth_m","section_end_depth_m","reported_scientific_name","reported_value","reporting_institute_name_sv")
