@@ -20,13 +20,13 @@ match_taxa <- function(names, ask = TRUE) {
     }
   }
 
-  message(sprintf("%s names, %s without matches, length(unames), length(no)))
+  message(sprintf("%s names, %s without matches", length(unames), length(no)))
 
   # populate data frame
 
   for (i in seq_along(matches)) {
 
-    row <- list(scientificName = NA, scientificNameID = NA, match_type = NA)
+    row <- list(scientificName = NA, scientificNameID = NA)
 
     match <- matches[[i]]
     if (is.data.frame(match)) {
@@ -35,23 +35,9 @@ match_taxa <- function(names, ask = TRUE) {
 
         # single match
 
-        row$scientificName = match$scientificname
-        row$scientificNameID = match$lsid
-        row$match_type = match$match_type
-
-      } else if (ask) {
-
-        # multiple matches
-
-        print(match %>% select(AphiaID, scientificname, authority, status, match_type))
-        message(unames[i])
-        n <- readline(prompt = "Multiple matches, pick a number or leave empty to skip: ")
-        s <- as.integer(n)
-        if (!is.na(n) & n > 0 & n <= nrow(match)) {
-          row$scientificName = match$scientificname[s]
-          row$scientificNameID = match$lsid[s]
-          row$match_type = match$match_type[s]
-        }
+        row$scientificName = match$scientific_name
+        row$scientificNameID = match$dyntaxa_id
+        } 
 
       }
 
