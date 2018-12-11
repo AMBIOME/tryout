@@ -3,7 +3,22 @@
 \alias{check_datatype}
 \title{Check if the required and recommended datatype-specific SHARK fields are present.}
 \usage{
-check_datatype(data, level = "error")
+check_Bacterioplankton(data, level = "error")
+check_Chlorophyll(data, level = "error")
+check_Epibenthos(data, level = "error")
+check_EpibenthosDropvideo(data, level = "error")
+check_GreySeal(data, level = "error")
+check_HarbourPorpoise(data, level = "error")
+check_HarbourSeal(data, level = "error")
+check_PhysicalChemical(data, level = "error")
+check_Phytoplankton(data, level = "error")
+check_Picoplankton(data, level = "error")
+check_PrimaryProduction(data, level = "error")
+check_RingedSeal(data, level = "error")
+check_SealPathology(data, level = "error")
+check_Sedimentation(data, level = "error")
+check_Zoobenthos(data, level = "error")
+check_Zooplankton(data, level = "error")
 }
 \arguments{
 \item{data}{The data frame.}
