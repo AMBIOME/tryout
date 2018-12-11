@@ -44,12 +44,11 @@ report_summary <- function(qcreport, maxrows) {
 #' @export
 report <- function(data, qc = NULL, file = "report.html", dir = NULL, view = TRUE, topnspecies = 20) {
 
-  reportfile <- system.file("", "report.Rmd", package = "obistools")
+  reportfile <- system.file("", "report.Rmd", package = "tryout")
 
   if (is.null(qc)) {
     qc <- bind_rows(
       check_fields(data),
-      check_eventdate(data),
       check_onland(data, report = TRUE),
       check_depth(data, report = TRUE),
       check_outliers_dataset(data, report = TRUE),
@@ -57,7 +56,7 @@ report <- function(data, qc = NULL, file = "report.html", dir = NULL, view = TRU
     )
     qc <- distinct(qc)
   }
-  if(is.null(dir) || is.na(dir)) dir <- rappdirs::user_cache_dir("obistools")
+  if(is.null(dir) || is.na(dir)) dir <- rappdirs::user_cache_dir("tryout")
   if(!dir.exists(dir)) dir.create(dir, recursive = TRUE)
   outputfile <- rmarkdown::render(reportfile, output_file = file, output_dir = dir, params = list(data = data, qc = qc))
   if(view) {
