@@ -7,24 +7,6 @@ missing_values <- function(data) {
   return(data %in% c(NA, ""))
 }
 
-#' Event Core fields.
-#'
-#' @return Event Core fields.
-#' @export
-event_fields <- function() {
-  xml <- read_xml(system.file("", "event_core.xml", package = "obistools"))
-  return(xml_attr(xml_children(xml), "name"))
-}
-
-#' Occurrence Core fields.
-#'
-#' @return Occurrence Core fields.
-#' @export
-occurrence_fields <- function() {
-  xml <- read_xml(system.file("", "occurrence_core.xml", package = "obistools"))
-  return(xml_attr(xml_children(xml), "name"))
-}
-
 check_lonlat <- function(data, report) {
   errors <- c()
   if (!"sample_longitude_dd" %in% names(data)) {
@@ -46,7 +28,6 @@ check_lonlat <- function(data, report) {
   }
   return(NULL)
 }
-
 
 get_xy_clean <- function(data, returnisclean=FALSE) {
   check_lonlat(data, report = FALSE)
@@ -84,7 +65,6 @@ get_xy_clean_duplicates <- function(data) {
          isclean = NULL, duplicated_lookup = NULL)
   }
 }
-
 
 list_cache <- function() {
   list.files(rappdirs::user_cache_dir("obistools"), "call_", full.names = TRUE)
