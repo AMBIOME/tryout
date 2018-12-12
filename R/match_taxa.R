@@ -6,7 +6,13 @@
 #' @export
 match_taxa <- function(names, ask = TRUE) {
 
-  matches <- unlist(lapply(names, dyntaxa_list$TaxonId), recursive = FALSE)
+  f <- as.factor(names)
+  indices <- as.numeric(f)
+  unames <- levels(f)
+  
+  pages <- split(unames, as.integer((seq_along(unames) - 1) / 50)
+                 
+  matches <- unlist(lapply(pages, dyntaxa_list$TaxonId), recursive = FALSE)
 
   results <- data.frame(scientificName = character(), scientificNameID = character(), stringsAsFactors = FALSE)
 
