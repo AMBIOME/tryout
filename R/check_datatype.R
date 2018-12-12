@@ -1,8 +1,6 @@
 #' Check if the required and recommended datatype-specific SHARK system fields (different between different datatypes) are present.
-#'
 #' Missing or empty required fields are reported as errors,
-#' missing or empty recommended fields are reported as warnings.
-#'
+#' Missing or empty recommended fields are reported as warnings.
 #' @param data The data frame.
 #' @param level The level of error reporting, i.e. "error" or "warning". Recommended fields are only checked in case of "warning".
 #' @return Any warnings or errors.
@@ -150,7 +148,6 @@ check_Chlorophyll <- function(data, level = "error") {
     return(errors)
 }
 
-
 check_Epibenthos <- function(data, level = "error") {
 
     errors <- data_frame()
@@ -220,7 +217,6 @@ check_Epibenthos <- function(data, level = "error") {
 
     return(errors)
 }
-
 
 check_EpibenthosDropvideo <- function(data, level = "error") {
 
@@ -362,7 +358,6 @@ check_GreySeal <- function(data, level = "error") {
     return(errors)
 }
 
-
 check_HarbourPorpoise <- function(data, level = "error") {
 
     errors <- data_frame()
@@ -432,7 +427,6 @@ check_HarbourPorpoise <- function(data, level = "error") {
 
     return(errors)
 }
-
 
 check_HarbourSeal <- function(data, level = "error") {
 
@@ -504,7 +498,6 @@ check_HarbourSeal <- function(data, level = "error") {
     return(errors)
 }
 
-
 check_PhysicalChemical <- function(data, level = "error") {
 
     errors <- data_frame()
@@ -574,7 +567,6 @@ check_PhysicalChemical <- function(data, level = "error") {
 
     return(errors)
 }
-
 
 check_Phytoplankton <- function(data, level = "error") {
 
@@ -646,7 +638,6 @@ check_Phytoplankton <- function(data, level = "error") {
     return(errors)
 }
 
-
 check_Picoplankton <- function(data, level = "error") {
 
     errors <- data_frame()
@@ -716,7 +707,6 @@ check_Picoplankton <- function(data, level = "error") {
 
     return(errors)
 }
-
 
 check_PrimaryProduction <- function(data, level = "error") {
 
@@ -788,7 +778,6 @@ check_PrimaryProduction <- function(data, level = "error") {
     return(errors)
 }
 
-
 check_RingedSeal <- function(data, level = "error") {
 
     errors <- data_frame()
@@ -858,7 +847,6 @@ check_RingedSeal <- function(data, level = "error") {
 
     return(errors)
 }
-
 
 check_SealPathology <- function(data, level = "error") {
 
@@ -930,7 +918,6 @@ check_SealPathology <- function(data, level = "error") {
     return(errors)
 }
 
-
 check_Sedimentation <- function(data, level = "error") {
 
     errors <- data_frame()
@@ -1000,7 +987,6 @@ check_Sedimentation <- function(data, level = "error") {
 
     return(errors)
 }
-
 
 check_Zoobenthos <- function(data, level = "error") {
 
@@ -1072,7 +1058,6 @@ check_Zoobenthos <- function(data, level = "error") {
     return(errors)
 }
 
-
 check_Zooplankton <- function(data, level = "error") {
 
     errors <- data_frame()
@@ -1142,4 +1127,3 @@ check_Zooplankton <- function(data, level = "error") {
 
     return(errors)
 }
-
