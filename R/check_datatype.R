@@ -1,6 +1,8 @@
 #' Check if the required and recommended datatype-specific SHARK system fields (different between different datatypes) are present.
+#' 
 #' Missing or empty required fields are reported as errors,
-#' Missing or empty recommended fields are reported as warnings.
+#' missing or empty recommended fields are reported as warnings.
+#'
 #' @param data The data frame.
 #' @param level The level of error reporting, i.e. "error" or "warning". Recommended fields are only checked in case of "warning".
 #' @return Any warnings or errors.
