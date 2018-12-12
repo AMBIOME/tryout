@@ -2,8 +2,11 @@
 % Please edit documentation in R/check_datatype.R
 \name{check_datatype}
 \alias{check_datatype}
-\title{Check if the required and recommended datatype-specific SHARK fields are present.}
+\title{Check if the required and recommended global and datatype-specific SHARK fields are present.}
 \usage{
+# Global
+check_datatype(data, level = "error") 
+# Datatype-specific
 check_Bacterioplankton(data, level = "error")
 check_Chlorophyll(data, level = "error")
 check_Epibenthos(data, level = "error")
