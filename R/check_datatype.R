@@ -6,7 +6,7 @@
 #' @param data The data frame.
 #' @param level The level of error reporting, i.e. "error" or "warning". Recommended fields are only checked in case of "warning".
 #' @return Any warnings or errors.
-#' 
+#' @export
 #' modified from https://iobis.github.io/obistools
 #' Provoost P and Bosch S (2018). “obistools: Tools for data enhancement and quality control.” Ocean Biogeographic Information System. Intergovernmental Oceanographic Commission of UNESCO. https://cran.r-project.org/package=obistools.
 
