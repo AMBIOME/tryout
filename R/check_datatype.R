@@ -80,6 +80,18 @@ check_datatype <- function(data, level = "error") {
     return(errors)
 }
 
+#' Check if the required and recommended datatype-specific SHARK system fields (different between different datatypes) are present.
+#' 
+#' Missing or empty required fields are reported as errors,
+#' missing or empty recommended fields are reported as warnings.
+#'
+#' @param data The data frame.
+#' @param level The level of error reporting, i.e. "error" or "warning". Recommended fields are only checked in case of "warning".
+#' @return Any warnings or errors.
+#' @export
+#' modified from https://iobis.github.io/obistools
+#' Provoost P and Bosch S (2018). “obistools: Tools for data enhancement and quality control.” Ocean Biogeographic Information System. Intergovernmental Oceanographic Commission of UNESCO. https://cran.r-project.org/package=obistools.
+
 check_Bacterioplankton <- function(data, level = "error") {
 
     errors <- data_frame()
@@ -149,6 +161,18 @@ check_Bacterioplankton <- function(data, level = "error") {
 
     return(errors)
 }
+
+#' Check if the required and recommended datatype-specific SHARK system fields (different between different datatypes) are present.
+#' 
+#' Missing or empty required fields are reported as errors,
+#' missing or empty recommended fields are reported as warnings.
+#'
+#' @param data The data frame.
+#' @param level The level of error reporting, i.e. "error" or "warning". Recommended fields are only checked in case of "warning".
+#' @return Any warnings or errors.
+#' @export
+#' modified from https://iobis.github.io/obistools
+#' Provoost P and Bosch S (2018). “obistools: Tools for data enhancement and quality control.” Ocean Biogeographic Information System. Intergovernmental Oceanographic Commission of UNESCO. https://cran.r-project.org/package=obistools.
 
 check_Chlorophyll <- function(data, level = "error") {
 
@@ -220,6 +244,18 @@ check_Chlorophyll <- function(data, level = "error") {
     return(errors)
 }
 
+#' Check if the required and recommended datatype-specific SHARK system fields (different between different datatypes) are present.
+#' 
+#' Missing or empty required fields are reported as errors,
+#' missing or empty recommended fields are reported as warnings.
+#'
+#' @param data The data frame.
+#' @param level The level of error reporting, i.e. "error" or "warning". Recommended fields are only checked in case of "warning".
+#' @return Any warnings or errors.
+#' @export
+#' modified from https://iobis.github.io/obistools
+#' Provoost P and Bosch S (2018). “obistools: Tools for data enhancement and quality control.” Ocean Biogeographic Information System. Intergovernmental Oceanographic Commission of UNESCO. https://cran.r-project.org/package=obistools.
+
 check_Epibenthos <- function(data, level = "error") {
 
     errors <- data_frame()
@@ -289,6 +325,18 @@ check_Epibenthos <- function(data, level = "error") {
 
     return(errors)
 }
+
+#' Check if the required and recommended datatype-specific SHARK system fields (different between different datatypes) are present.
+#' 
+#' Missing or empty required fields are reported as errors,
+#' missing or empty recommended fields are reported as warnings.
+#'
+#' @param data The data frame.
+#' @param level The level of error reporting, i.e. "error" or "warning". Recommended fields are only checked in case of "warning".
+#' @return Any warnings or errors.
+#' @export
+#' modified from https://iobis.github.io/obistools
+#' Provoost P and Bosch S (2018). “obistools: Tools for data enhancement and quality control.” Ocean Biogeographic Information System. Intergovernmental Oceanographic Commission of UNESCO. https://cran.r-project.org/package=obistools.
 
 check_EpibenthosDropvideo <- function(data, level = "error") {
 
@@ -360,6 +408,18 @@ check_EpibenthosDropvideo <- function(data, level = "error") {
     return(errors)
 }
 
+#' Check if the required and recommended datatype-specific SHARK system fields (different between different datatypes) are present.
+#' 
+#' Missing or empty required fields are reported as errors,
+#' missing or empty recommended fields are reported as warnings.
+#'
+#' @param data The data frame.
+#' @param level The level of error reporting, i.e. "error" or "warning". Recommended fields are only checked in case of "warning".
+#' @return Any warnings or errors.
+#' @export
+#' modified from https://iobis.github.io/obistools
+#' Provoost P and Bosch S (2018). “obistools: Tools for data enhancement and quality control.” Ocean Biogeographic Information System. Intergovernmental Oceanographic Commission of UNESCO. https://cran.r-project.org/package=obistools.
+
 check_GreySeal <- function(data, level = "error") {
 
     errors <- data_frame()
@@ -429,6 +489,18 @@ check_GreySeal <- function(data, level = "error") {
 
     return(errors)
 }
+
+#' Check if the required and recommended datatype-specific SHARK system fields (different between different datatypes) are present.
+#' 
+#' Missing or empty required fields are reported as errors,
+#' missing or empty recommended fields are reported as warnings.
+#'
+#' @param data The data frame.
+#' @param level The level of error reporting, i.e. "error" or "warning". Recommended fields are only checked in case of "warning".
+#' @return Any warnings or errors.
+#' @export
+#' modified from https://iobis.github.io/obistools
+#' Provoost P and Bosch S (2018). “obistools: Tools for data enhancement and quality control.” Ocean Biogeographic Information System. Intergovernmental Oceanographic Commission of UNESCO. https://cran.r-project.org/package=obistools.
 
 check_HarbourPorpoise <- function(data, level = "error") {
 
@@ -500,6 +572,18 @@ check_HarbourPorpoise <- function(data, level = "error") {
     return(errors)
 }
 
+#' Check if the required and recommended datatype-specific SHARK system fields (different between different datatypes) are present.
+#' 
+#' Missing or empty required fields are reported as errors,
+#' missing or empty recommended fields are reported as warnings.
+#'
+#' @param data The data frame.
+#' @param level The level of error reporting, i.e. "error" or "warning". Recommended fields are only checked in case of "warning".
+#' @return Any warnings or errors.
+#' @export
+#' modified from https://iobis.github.io/obistools
+#' Provoost P and Bosch S (2018). “obistools: Tools for data enhancement and quality control.” Ocean Biogeographic Information System. Intergovernmental Oceanographic Commission of UNESCO. https://cran.r-project.org/package=obistools.
+
 check_HarbourSeal <- function(data, level = "error") {
 
     errors <- data_frame()
@@ -569,6 +653,18 @@ check_HarbourSeal <- function(data, level = "error") {
 
     return(errors)
 }
+
+#' Check if the required and recommended datatype-specific SHARK system fields (different between different datatypes) are present.
+#' 
+#' Missing or empty required fields are reported as errors,
+#' missing or empty recommended fields are reported as warnings.
+#'
+#' @param data The data frame.
+#' @param level The level of error reporting, i.e. "error" or "warning". Recommended fields are only checked in case of "warning".
+#' @return Any warnings or errors.
+#' @export
+#' modified from https://iobis.github.io/obistools
+#' Provoost P and Bosch S (2018). “obistools: Tools for data enhancement and quality control.” Ocean Biogeographic Information System. Intergovernmental Oceanographic Commission of UNESCO. https://cran.r-project.org/package=obistools.
 
 check_PhysicalChemical <- function(data, level = "error") {
 
@@ -640,6 +736,18 @@ check_PhysicalChemical <- function(data, level = "error") {
     return(errors)
 }
 
+#' Check if the required and recommended datatype-specific SHARK system fields (different between different datatypes) are present.
+#' 
+#' Missing or empty required fields are reported as errors,
+#' missing or empty recommended fields are reported as warnings.
+#'
+#' @param data The data frame.
+#' @param level The level of error reporting, i.e. "error" or "warning". Recommended fields are only checked in case of "warning".
+#' @return Any warnings or errors.
+#' @export
+#' modified from https://iobis.github.io/obistools
+#' Provoost P and Bosch S (2018). “obistools: Tools for data enhancement and quality control.” Ocean Biogeographic Information System. Intergovernmental Oceanographic Commission of UNESCO. https://cran.r-project.org/package=obistools.
+
 check_Phytoplankton <- function(data, level = "error") {
 
     errors <- data_frame()
@@ -709,6 +817,18 @@ check_Phytoplankton <- function(data, level = "error") {
 
     return(errors)
 }
+
+#' Check if the required and recommended datatype-specific SHARK system fields (different between different datatypes) are present.
+#' 
+#' Missing or empty required fields are reported as errors,
+#' missing or empty recommended fields are reported as warnings.
+#'
+#' @param data The data frame.
+#' @param level The level of error reporting, i.e. "error" or "warning". Recommended fields are only checked in case of "warning".
+#' @return Any warnings or errors.
+#' @export
+#' modified from https://iobis.github.io/obistools
+#' Provoost P and Bosch S (2018). “obistools: Tools for data enhancement and quality control.” Ocean Biogeographic Information System. Intergovernmental Oceanographic Commission of UNESCO. https://cran.r-project.org/package=obistools.
 
 check_Picoplankton <- function(data, level = "error") {
 
@@ -780,6 +900,18 @@ check_Picoplankton <- function(data, level = "error") {
     return(errors)
 }
 
+#' Check if the required and recommended datatype-specific SHARK system fields (different between different datatypes) are present.
+#' 
+#' Missing or empty required fields are reported as errors,
+#' missing or empty recommended fields are reported as warnings.
+#'
+#' @param data The data frame.
+#' @param level The level of error reporting, i.e. "error" or "warning". Recommended fields are only checked in case of "warning".
+#' @return Any warnings or errors.
+#' @export
+#' modified from https://iobis.github.io/obistools
+#' Provoost P and Bosch S (2018). “obistools: Tools for data enhancement and quality control.” Ocean Biogeographic Information System. Intergovernmental Oceanographic Commission of UNESCO. https://cran.r-project.org/package=obistools.
+
 check_PrimaryProduction <- function(data, level = "error") {
 
     errors <- data_frame()
@@ -849,6 +981,18 @@ check_PrimaryProduction <- function(data, level = "error") {
 
     return(errors)
 }
+
+#' Check if the required and recommended datatype-specific SHARK system fields (different between different datatypes) are present.
+#' 
+#' Missing or empty required fields are reported as errors,
+#' missing or empty recommended fields are reported as warnings.
+#'
+#' @param data The data frame.
+#' @param level The level of error reporting, i.e. "error" or "warning". Recommended fields are only checked in case of "warning".
+#' @return Any warnings or errors.
+#' @export
+#' modified from https://iobis.github.io/obistools
+#' Provoost P and Bosch S (2018). “obistools: Tools for data enhancement and quality control.” Ocean Biogeographic Information System. Intergovernmental Oceanographic Commission of UNESCO. https://cran.r-project.org/package=obistools.
 
 check_RingedSeal <- function(data, level = "error") {
 
@@ -920,6 +1064,18 @@ check_RingedSeal <- function(data, level = "error") {
     return(errors)
 }
 
+#' Check if the required and recommended datatype-specific SHARK system fields (different between different datatypes) are present.
+#' 
+#' Missing or empty required fields are reported as errors,
+#' missing or empty recommended fields are reported as warnings.
+#'
+#' @param data The data frame.
+#' @param level The level of error reporting, i.e. "error" or "warning". Recommended fields are only checked in case of "warning".
+#' @return Any warnings or errors.
+#' @export
+#' modified from https://iobis.github.io/obistools
+#' Provoost P and Bosch S (2018). “obistools: Tools for data enhancement and quality control.” Ocean Biogeographic Information System. Intergovernmental Oceanographic Commission of UNESCO. https://cran.r-project.org/package=obistools.
+
 check_SealPathology <- function(data, level = "error") {
 
     errors <- data_frame()
@@ -989,6 +1145,18 @@ check_SealPathology <- function(data, level = "error") {
 
     return(errors)
 }
+
+#' Check if the required and recommended datatype-specific SHARK system fields (different between different datatypes) are present.
+#' 
+#' Missing or empty required fields are reported as errors,
+#' missing or empty recommended fields are reported as warnings.
+#'
+#' @param data The data frame.
+#' @param level The level of error reporting, i.e. "error" or "warning". Recommended fields are only checked in case of "warning".
+#' @return Any warnings or errors.
+#' @export
+#' modified from https://iobis.github.io/obistools
+#' Provoost P and Bosch S (2018). “obistools: Tools for data enhancement and quality control.” Ocean Biogeographic Information System. Intergovernmental Oceanographic Commission of UNESCO. https://cran.r-project.org/package=obistools.
 
 check_Sedimentation <- function(data, level = "error") {
 
@@ -1060,6 +1228,18 @@ check_Sedimentation <- function(data, level = "error") {
     return(errors)
 }
 
+#' Check if the required and recommended datatype-specific SHARK system fields (different between different datatypes) are present.
+#' 
+#' Missing or empty required fields are reported as errors,
+#' missing or empty recommended fields are reported as warnings.
+#'
+#' @param data The data frame.
+#' @param level The level of error reporting, i.e. "error" or "warning". Recommended fields are only checked in case of "warning".
+#' @return Any warnings or errors.
+#' @export
+#' modified from https://iobis.github.io/obistools
+#' Provoost P and Bosch S (2018). “obistools: Tools for data enhancement and quality control.” Ocean Biogeographic Information System. Intergovernmental Oceanographic Commission of UNESCO. https://cran.r-project.org/package=obistools.
+
 check_Zoobenthos <- function(data, level = "error") {
 
     errors <- data_frame()
@@ -1129,6 +1309,18 @@ check_Zoobenthos <- function(data, level = "error") {
 
     return(errors)
 }
+
+#' Check if the required and recommended datatype-specific SHARK system fields (different between different datatypes) are present.
+#' 
+#' Missing or empty required fields are reported as errors,
+#' missing or empty recommended fields are reported as warnings.
+#'
+#' @param data The data frame.
+#' @param level The level of error reporting, i.e. "error" or "warning". Recommended fields are only checked in case of "warning".
+#' @return Any warnings or errors.
+#' @export
+#' modified from https://iobis.github.io/obistools
+#' Provoost P and Bosch S (2018). “obistools: Tools for data enhancement and quality control.” Ocean Biogeographic Information System. Intergovernmental Oceanographic Commission of UNESCO. https://cran.r-project.org/package=obistools.
 
 check_Zooplankton <- function(data, level = "error") {
 
