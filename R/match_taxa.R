@@ -10,7 +10,7 @@ match_taxa <- function(names, ask = TRUE) {
   indices <- as.numeric(f)
   unames <- levels(f)
   
-  pages <- split(unames, as.integer((seq_along(unames) - 1) / 50)
+  pages <- split(unames, as.integer((seq_along(unames) - 1) / 50))
                  
   matches <- unlist(lapply(pages, dyntaxa_list$TaxonId), recursive = FALSE)
 
