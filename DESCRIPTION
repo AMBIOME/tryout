@@ -4,8 +4,8 @@ Description: Control data sets submitted to the Swedish Oceanographic data cente
 Version: 0.0.1
 Date: 2018-12-07
 Authors@R: c(
-    person("Markus", "V.", "Lindh", "markus.lindh@smhi.se", role = c("cre", "aut")),
-        person(, "SHARK", , "shark@smhi.se", role = "cph"))
+    person(given="Markus", family="Lindh", email="markus.lindh@smhi.se", role = c("cre", "aut")),
+        person(given="SHARK", email="shark@smhi.se", role = "cph"))
 Depends:
     R (>= 3.5.1)
 License: MIT + file LICENSE
