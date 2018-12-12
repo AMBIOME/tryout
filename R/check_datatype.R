@@ -1,4 +1,4 @@
-#' Check if the required and recommended global SHARK system fields (different between different datatypes) are present.
+#' Check if the required and recommended global and datatype-specific SHARK system fields (different between different datatypes) are present.
 #' 
 #' Missing or empty required fields are reported as errors,
 #' missing or empty recommended fields are reported as warnings.
