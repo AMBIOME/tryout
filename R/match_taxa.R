@@ -18,8 +18,7 @@ match_taxa <- function(names, ask = TRUE) {
       } else {
       no <- c(no, unames[i])
     }
-  }
-
+  
   message(sprintf("%s names, %s without matches", length(unames), length(no)))
 
   # populate data frame
@@ -40,9 +39,7 @@ match_taxa <- function(names, ask = TRUE) {
         } 
 
       }
-
     }
-
     results <- bind_rows(results, row)
 
   }
