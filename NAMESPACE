@@ -2,7 +2,6 @@
 
 export(check_datatype)
 export(check_depth)
-export(check_fields)
 export(check_onland)
 export(check_outliers_dataset)
 export(check_outliers_species)
